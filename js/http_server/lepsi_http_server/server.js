@@ -1,4 +1,11 @@
+
+require('dotenv').config();
+
+const port = process.env.PORT;
+
+// spusteni serveru pro aplikaci
 require('http').createServer(require('./app'))
-.listen(8000, () => {
-    console.log('Server běží na portu 8000...');
+
+.listen(port, () => {
+    console.log(`Server běží na http://localhost:${port}`);
 });
