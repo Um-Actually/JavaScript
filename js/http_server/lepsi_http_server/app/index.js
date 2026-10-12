@@ -9,8 +9,6 @@ app.set('views', './app/views');
 app.use(express.static('public'));
 
 
-app.get(['/', '/index'], (req, res) => {
-	res.render('index');
-});
+app.use(require('./routes/defaultRouter'));
 
 module.exports = app;
