@@ -5,12 +5,20 @@ router.get('/kontakt', (req, res) => {
 	res.render('kontakt');
 });
 router.get('/menu', (req, res) => {
-	res.render('menu');
+	res.render('menu', {
+		menu:[
+			
+		]
+	}
+
+	);
 });
 
 
 router.get(['/','/index'], (req, res) => {
-	res.render('index');
+	res.render('index', {
+		'title': 'Domovská stránka'
+	});
 });
 
 // vsechny ostatni URL jsou chyba
