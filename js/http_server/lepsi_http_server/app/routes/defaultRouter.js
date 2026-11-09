@@ -1,14 +1,13 @@
 const router = require('express').Router();
+const model = require('../models/postsModel.js');
 
-// custom URL s custom odpovedi
+
 router.get('/kontakt', (req, res) => {
 	res.render('kontakt');
 });
 router.get('/menu', (req, res) => {
 	res.render('menu', {
-		menu:[
-			
-		]
+		'title': 'Menu',
 	}
 
 	);
@@ -24,11 +23,7 @@ router.get(['/','/index'], (req, res) => {
 router.get('/posts', (req, res) => {
 	res.render('posts', {
 		titulek: 'Příspěvky',
-		prispevky: [
-			{ id: 1, nadpis: 'První příspěvek', obsah: 'Toto je první příspěvek.' },
-			{ id: 2, nadpis: 'Druhý příspěvek', obsah: 'Toto je druhý příspěvek.' },
-			{ id: 3, nadpis: 'Třetí příspěvek', obsah: 'Toto je třetí příspěvek.' },
-		],
+		prispevky: model.nacistPrispevky(),
 	});
 });
 
