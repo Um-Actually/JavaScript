@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title><%= titulek %></title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-    <nav class="menu">
-        <img src="img/logo.png" alt="Logo kavárny" class="logo">
-        <a href="/index" >Úvod</a>
-        <a href="/menu"class="active">Menu</a>
-        <a href="/kontakt">Kontakt</a>
-        <a href="/posts">Prispevky</a>
-    </nav>
-</header>
-
-<main>
+<%- include('_partials/header') %>
     <h1>Menu</h1>
 
     <h2>Nápoje</h2>
@@ -45,13 +26,5 @@
 
 </main>
 
-<footer>
-    <p>© 2026 Kavárna U Šálku</p>
-    <p>
-        <a href="#">Instagram</a> |
-        <a href="#">Facebook</a>
-    </p>
-</footer>
+<%- include('_partials/footer') %>
 
-</body>
-</html>
