@@ -8,6 +8,7 @@ app.set('views', './app/views');
 
 app.use(express.static('public'));
 
+app.use(express.urlencoded({ extended: false }));
 
 app.use(require('./routes/defaultRouter'));
 
