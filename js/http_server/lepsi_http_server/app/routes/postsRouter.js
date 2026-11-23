@@ -1,5 +1,5 @@
 // zavislosti
-const controller = require('../controllers/postscontroller.js');
+const controller = require('../controllers/postsController.js');
 
 const router = require('express').Router();
 

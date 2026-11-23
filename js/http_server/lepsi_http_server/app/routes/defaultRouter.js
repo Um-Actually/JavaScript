@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const model = require('../models/postsModel.js');
-const controller = require('../controllers/defaultcontroller.js');
+const controller = require('../controllers/defaultController.js');
 
 
 
@@ -14,10 +14,13 @@ router.get(['/kontakt'], controller.kontakt);
 router.use('/posts', require('./postsRouter.js'));
 
 
+router.use('/users', require('./usersRouter.js'));
 
 // vsechny ostatni URL jsou chyba
 router.use((req, res) => {
-    res.render('error');
+    res.status(404).render('error', {
+        titulek: 'Stránka nebyla nalezena',
+    });
 });
 
 // exportovani routeru pro pouziti v aplikaci

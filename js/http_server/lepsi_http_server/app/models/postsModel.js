@@ -1,7 +1,8 @@
 
 const jsondb = require('simple-json-db');
+const path = require('path');
 
-const db = new jsondb('../lepsi_http_server/data/posts.json');
+const db = new jsondb(path.resolve(__dirname, '../../data/posts.json'));
 exports.nacistPrispevky = () => {
     return db.JSON();
 }
