@@ -1,4 +1,4 @@
-const controller = require('../controllers/userscontroller.js');
+const controller = require('../controllers/usersController.js');
 const router = require('express').Router();
 
 router.get('/', controller.oneForm);
