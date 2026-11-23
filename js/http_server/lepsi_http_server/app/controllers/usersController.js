@@ -48,3 +48,21 @@ exports.getOut = (req, res) => {
     req.session.destroy();
     res.redirect('/users');
 }
+
+exports.deleteAccount = (req, res, next) => {
+    const jmeno = req.session.prihlasenyUzivatel;
+    if(!jmeno) {
+        return res.redirect('/users');
+    }
+
+    if(!model.smazatUzivatele(jmeno)) {
+        return res.status(404).send('Účet nebyl nalezen.');
+    }
+
+    req.session.destroy((err) => {
+        if(err) {
+            return next(err);
+        }
+        res.redirect('/users');
+    });
+}

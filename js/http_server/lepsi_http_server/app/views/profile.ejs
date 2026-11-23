@@ -6,4 +6,8 @@
         <input type="submit" value="Odhlásit" />
     </form>
 
+    <form action="/users/delete" method="post" onsubmit="return confirm('Opravdu chcete trvale smazat svůj účet?');">
+        <input type="submit" value="Smazat účet" />
+    </form>
+
 <%- include('_partials/footer') %>
