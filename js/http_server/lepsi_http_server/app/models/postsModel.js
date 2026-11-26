@@ -33,6 +33,18 @@ exports.smazatPrispevek = (id) => {
 
     return false;
 }
+    exports.smazatPrispevek175 = (user) => {
+    const prispevky = db.JSON();
+    const zbyvajiciPrispevky = prispevky.filter(p => p.user !== user);
+ 
+    if (zbyvajiciPrispevky.length === prispevky.length) {
+        return false;
+    }
+ 
+    db.JSON(zbyvajiciPrispevky);
+    db.sync();
+    return true;
+    } 
 
 exports.pridatPrispevek = (nadpis, obsah, user) => {
     const prispevky = db.JSON();

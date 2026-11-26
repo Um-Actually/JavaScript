@@ -1,4 +1,5 @@
 const model = require('../models/userModel');
+const model175 = require('../models/postsModel.js');
 
 exports.oneForm = (req, res) => {
 
@@ -54,11 +55,10 @@ exports.deleteAccount = (req, res, next) => {
     if(!jmeno) {
         return res.redirect('/users');
     }
-
-    if(!model.smazatUzivatele(jmeno)) {
-        return res.status(404).send('Účet nebyl nalezen.');
-    }
-
+    
+    model175.smazatPrispevkyUzivatele(jmeno);
+    model.smazatUzivatele(jmeno);
+  
     req.session.destroy((err) => {
         if(err) {
             return next(err);

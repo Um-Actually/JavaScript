@@ -1,5 +1,6 @@
 
 const model = require('../models/postsModel.js');
+const model2 = require('../models/postsModel.js');
 
 exports.allPosts = (req, res) => {
 	res.render('posts', {

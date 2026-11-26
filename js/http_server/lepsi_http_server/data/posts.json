@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "id": 1,
+        "nadpis": "a",
+        "obsah": "a",
+        "user": "pepa1"
+    },
+    {
+        "id": 2,
+        "nadpis": "b",
+        "obsah": "b",
+        "user": "pepa1"
+    },
+    {
+        "id": 3,
+        "nadpis": "c",
+        "obsah": "c",
+        "user": "pepa1"
+    },
+    {
+        "id": 4,
+        "nadpis": "d",
+        "obsah": "d",
+        "user": "pepa1"
+    }
+]
