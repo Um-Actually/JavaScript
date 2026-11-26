@@ -1,10 +1,18 @@
 <%- include('_partials/header') %>
     <h1><%= titulek %></h1>
-    <form action="/posts/new" method="post">
+
+    <% if(prihlasenyUzivatel!=null) { %>
+        <form action="/posts/new" method="post">
         <input type="text" name="nadpis" placeholder="Nadpis..." required /><br />
         <textarea name="obsah" placeholder="Obsah..." required></textarea><br />
         <input type="submit" value="Přidat recenzi" />
     </form>
+        
+    <%}
+
+     else { %>
+        <p><i>Pro přidání recenze se musíte přihlásit.</i></p>
+    <%}%>
 
 
     <% if(typeof prispevky == 'undefined' || prispevky.length == 0) { %>

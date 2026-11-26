@@ -5,6 +5,7 @@ exports.allPosts = (req, res) => {
 	res.render('posts', {
 		titulek: 'Recenze',
 		prispevky: model.nacistPrispevky(),
+		prihlasenyUzivatel: req.session.prihlasenyUzivatel
 	});
 }
 
@@ -19,7 +20,6 @@ exports.showPost = (req, res) => {
 		prispevek: prispevek,
 	});
 }
-
 
 exports.deletePost = (req, res) => {
     const id = req.params.id;

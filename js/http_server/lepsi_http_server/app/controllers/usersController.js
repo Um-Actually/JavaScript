@@ -66,3 +66,4 @@ exports.deleteAccount = (req, res, next) => {
         res.redirect('/users');
     });
 }
+
