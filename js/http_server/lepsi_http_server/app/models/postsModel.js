@@ -34,7 +34,7 @@ exports.smazatPrispevek = (id) => {
     return false;
 }
 
-exports.pridatPrispevek = (nadpis, obsah) => {
+exports.pridatPrispevek = (nadpis, obsah, user) => {
     const prispevky = db.JSON();
 
     // urceni noveho ID
@@ -47,6 +47,7 @@ exports.pridatPrispevek = (nadpis, obsah) => {
         id: noveId,
         nadpis,
         obsah,
+        user,
     });
 
     db.JSON(prispevky);

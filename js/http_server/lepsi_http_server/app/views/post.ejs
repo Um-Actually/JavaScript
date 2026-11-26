@@ -1,11 +1,12 @@
 <%- include('_partials/header') %>
     <h1><%= titulek %></h1>
     <% if(typeof prispevek == 'undefined' || prispevek == false) { %>
-        <p><i>Takový příspěvek neexistuje.</i></p>
+        <p><i>Taková recenze neexistuje.</i></p>
     <% } else { %>
         <div id="<%= prispevek.id %>">
             <h2><%= prispevek.nadpis %></h2>
             <p><%= prispevek.obsah %></p>
+            <p>Autor: <%= prispevek.user %></p>
         </div>
     <% } %>
     <a href="/posts">Zpět</a>

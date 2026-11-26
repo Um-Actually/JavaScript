@@ -3,7 +3,7 @@ const model = require('../models/postsModel.js');
 
 exports.allPosts = (req, res) => {
 	res.render('posts', {
-		titulek: 'Příspěvky',
+		titulek: 'Recenze',
 		prispevky: model.nacistPrispevky(),
 	});
 }
@@ -15,7 +15,7 @@ exports.showPost = (req, res) => {
 	const prispevek = model.nacistPrispevek(id);
 
 	res.render('post', {
-		titulek: 'Příspěvek',
+		titulek: 'Recenze',
 		prispevek: prispevek,
 	});
 }
@@ -30,11 +30,12 @@ exports.deletePost = (req, res) => {
 exports.addPost = (req, res) => {
     const nadpis = req.body.nadpis;
     const obsah = req.body.obsah;
+    const user = req.session.prihlasenyUzivatel;
 
     if(!nadpis || !obsah) {
         return res.redirect('/posts');
     }
 
-    model.pridatPrispevek(nadpis, obsah);
+    model.pridatPrispevek(nadpis, obsah, user);
     res.redirect('/posts');
 }
